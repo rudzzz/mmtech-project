@@ -1,0 +1,63 @@
+button {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.list-container {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.list-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 45px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #a3a3a3;
+  font-size: 25px;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-actions button {
+  margin-right: 5px;
+}
+
+.btn-edit {
+  color: #fff;
+  background-color: rgb(12, 146, 199);
+}
+
+.btn-delete {
+  color: #fff;
+  background-color: rgb(231, 48, 48);
+}
+
+.btn-add {
+  color: #fff;
+  background-color: forestgreen;
+}

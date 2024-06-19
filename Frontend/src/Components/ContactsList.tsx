@@ -35,21 +35,26 @@ const ContactsList = () => {
   };
 
   return (
-    <div>
-      <h2>Contacts</h2>
+    <div className="list-container">
+      <h1>Contacts</h1>
       <Link to={"/form/"}>
-        <button>New Contact</button>
+        <button className="btn-add">New Contact</button>
       </Link>
       <ul>
         {contacts.map((contact) => (
-          <li key={contact._id}>
+          <li key={contact._id} className="contact-item">
             {contact.name}
-            <Link to={`/form/${contact._id}`}>
-              <button>Edit</button>
-            </Link>
-            <button onClick={() => handleDeleteContact(contact._id)}>
-              Delete
-            </button>
+            <div className="contact-actions">
+              <Link to={`/form/${contact._id}`}>
+                <button className="btn-edit">Edit</button>
+              </Link>
+              <button
+                className="btn-delete"
+                onClick={() => handleDeleteContact(contact._id)}
+              >
+                Delete
+              </button>
+            </div>
           </li>
         ))}
       </ul>
