@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import ContactsForm from "./ContactsForm";
 
 const ContactsList = () => {
   const [contacts, setContacts] = useState([]);
@@ -18,10 +20,16 @@ const ContactsList = () => {
   return (
     <div>
       <h2>Contacts</h2>
+      <Link to={"/form/"}>
+        <button>New Contact</button>
+      </Link>
       <ul>
         {contacts.map((contact) => (
           <li key={contact._id}>
-            {contact.name} - {contact.email} - {contact.phone}
+            {contact.name}
+            <Link to={`/form/${contact._id}`}>
+              <button>Edit</button>
+            </Link>
           </li>
         ))}
       </ul>

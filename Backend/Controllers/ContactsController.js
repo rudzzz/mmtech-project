@@ -11,6 +11,23 @@ exports.getContacts = (request, response) => {
   });
 };
 
+exports.getContactByid = (request, response) => {
+  const { id } = request.params;
+  database.findOne({ _id: id }, (error, contact) => {
+    if (error) {
+      return response
+        .status(500)
+        .json({ message: `Failed to fetch contact: ${error.message}` });
+    }
+
+    if (!contact) {
+      return response.status(404).json({ message: "Contact not found." });
+    }
+
+    response.status(200).json(contact);
+  });
+};
+
 exports.createContact = (request, response) => {
   const { name, email, phone } = request.body;
   if (!name || !email || !phone) {
