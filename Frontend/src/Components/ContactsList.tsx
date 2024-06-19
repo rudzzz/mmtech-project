@@ -17,6 +17,23 @@ const ContactsList = () => {
       });
   }, []);
 
+  const handleDeleteContact = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this contact?"
+    );
+    if (!confirmDelete) {
+      return;
+    }
+    try {
+      await axios.delete(`http://localhost:3000/api/contacts/${id}`);
+      setContacts((previousContacts) =>
+        previousContacts.filter((contact) => contact._id !== id)
+      );
+    } catch (error) {
+      console.log("Error deleting contact, ", error);
+    }
+  };
+
   return (
     <div>
       <h2>Contacts</h2>
@@ -30,6 +47,9 @@ const ContactsList = () => {
             <Link to={`/form/${contact._id}`}>
               <button>Edit</button>
             </Link>
+            <button onClick={() => handleDeleteContact(contact._id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>

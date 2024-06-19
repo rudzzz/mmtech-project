@@ -1,5 +1,17 @@
-{"name":"user 1","email":"user@test.com","phone":40028922,"_id":"5eSjtQIUyHoBrGOQ"}
+{"name":"user 1 updated 3","email":"user@test.com","phone":40028922,"_id":"5eSjtQIUyHoBrGOQ"}
 {"name":"user test","email":"user4@test.com","phone":"123456","_id":"iB7x5GSuujXH2xgZ"}
 {"name":"user 2","email":"user2@test.com","phone":9999999,"_id":"iQsCu7gzLwQ6uvZH"}
-{"name":"user 1 updated","email":"user@test.com","phone":40028922,"_id":"5eSjtQIUyHoBrGOQ"}
+{"$$deleted":true,"_id":"iQsCu7gzLwQ6uvZH"}
+{"$$deleted":true,"_id":"iB7x5GSuujXH2xgZ"}
+{"name":"admin","email":"admin@admin","phone":"40028922","_id":"Fw9wKAqJkocX5kgW"}
+{"name":"admin updated","email":"admin@admin","phone":"40028922","_id":"Fw9wKAqJkocX5kgW"}
+{"$$deleted":true,"_id":"Fw9wKAqJkocX5kgW"}
+{"name":"admin","email":"amin@admin.com","phone":"4028922","_id":"PYmlviU4b6DjyuVf"}
+{"$$deleted":true,"_id":"PYmlviU4b6DjyuVf"}
+{"name":"aaa","email":"aaa@aaa.com","phone":"123","_id":"stvMyy1vZckh9yJR"}
+{"$$deleted":true,"_id":"stvMyy1vZckh9yJR"}
 {"name":"user 1 updated 3","email":"user@test.com","phone":40028922,"_id":"5eSjtQIUyHoBrGOQ"}
+{"name":"user 1 updated 3","email":"user@test.com","phone":40028922,"_id":"5eSjtQIUyHoBrGOQ"}
+{"name":"test","email":"aa@test.com","phone":"123","_id":"GkD637rhqm5O9kgH"}
+{"name":"test","email":"aa@test.com","phone":"123","_id":"WnDIHdheUNPX3IJu"}
+{"name":"test 2","email":"aa@test.com","phone":"123","_id":"WnDIHdheUNPX3IJu"}
