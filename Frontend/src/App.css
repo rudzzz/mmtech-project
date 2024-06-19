@@ -1,3 +1,7 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 button {
   padding: 15px;
   border-radius: 10px;
@@ -60,4 +64,44 @@ ul {
 .btn-add {
   color: #fff;
   background-color: forestgreen;
+}
+
+/* Contact Form */
+
+.form-container {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.form-container input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.form-container button {
+  margin-right: 10px;
+}
+
+.form-btn {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

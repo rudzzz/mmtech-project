@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import ContactsForm from "./ContactsForm";
 
 const ContactsList = () => {
   const [contacts, setContacts] = useState([]);

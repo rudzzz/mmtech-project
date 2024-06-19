@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ContactsForm = () => {
   const { id } = useParams();
@@ -49,12 +49,13 @@ const ContactsForm = () => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="contact-name">Name</label>
         <input
           type="text"
           required
+          maxLength={45}
           name="name"
           value={name}
           id="contact-name"
@@ -65,6 +66,7 @@ const ContactsForm = () => {
         <input
           type="email"
           required
+          maxLength={35}
           name="email"
           value={email}
           id="contact-email"
@@ -75,13 +77,22 @@ const ContactsForm = () => {
         <input
           type="phone"
           required
+          maxLength={15}
           name="phone"
           value={phone}
           id="contact-phone"
           onChange={(e) => setPhone(e.target.value)}
         />
 
-        <button type="submit">Save</button>
+        <div className="form-btn">
+          <Link to={"/"}>
+            <button className="btn-edit">Back</button>
+          </Link>
+
+          <button className="btn-add" type="submit">
+            Save
+          </button>
+        </div>
       </form>
     </div>
   );

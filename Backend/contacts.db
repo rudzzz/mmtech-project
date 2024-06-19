@@ -15,3 +15,4 @@
 {"name":"test","email":"aa@test.com","phone":"123","_id":"GkD637rhqm5O9kgH"}
 {"name":"test","email":"aa@test.com","phone":"123","_id":"WnDIHdheUNPX3IJu"}
 {"name":"test 2","email":"aa@test.com","phone":"123","_id":"WnDIHdheUNPX3IJu"}
+{"$$deleted":true,"_id":"WnDIHdheUNPX3IJu"}
