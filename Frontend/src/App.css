@@ -22,7 +22,7 @@ button:hover {
   background-color: #f9f9f9;
 }
 
-.list-container h1 {
+h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
@@ -49,6 +49,11 @@ ul {
 
 .contact-actions button {
   margin-right: 5px;
+}
+
+.btn-details {
+  color: #fff;
+  background-color: rgb(196, 196, 54);
 }
 
 .btn-edit {
@@ -104,4 +109,118 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Contacts Detail */
+.contact-detail-container {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.contact-detail-container p {
+  font-size: 20px;
+}
+
+/* Responsive */
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  .list-container,
+  .form-container,
+  .contact-detail-container {
+    max-width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .contact-details {
+    margin-bottom: 10px;
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contact-actions button {
+    margin-right: 5px;
+    width: auto;
+  }
+
+  .form-container label {
+    font-size: 20px;
+  }
+
+  .form-container input {
+    font-size: 16px;
+  }
+
+  .form-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form-btn button {
+    margin-right: 5px;
+    width: auto;
+  }
+
+  .contact-detail-container p {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .list-container,
+  .form-container,
+  .contact-detail-container {
+    padding: 10px;
+  }
+
+  .form-container label,
+  .form-container input {
+    font-size: 14px;
+  }
+
+  .form-btn button {
+    padding: 8px 12px;
+  }
+
+  .contact-detail-container p {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }

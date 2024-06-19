@@ -47,6 +47,9 @@ const ContactsList = () => {
               <Link to={`/form/${contact._id}`}>
                 <button className="btn-edit">Edit</button>
               </Link>
+              <Link to={`/details/${contact._id}`}>
+                <button className="btn-details">Details</button>
+              </Link>
               <button
                 className="btn-delete"
                 onClick={() => handleDeleteContact(contact._id)}
