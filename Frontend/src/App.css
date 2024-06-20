@@ -141,6 +141,27 @@ ul {
   color: #fff;
 }
 
+/* Custom messages */
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message p {
+  color: #fff;
+  font-size: 30px;
+}
+
+.success-message {
+  background-color: forestgreen;
+}
+
+.error-message {
+  background-color: rgb(231, 48, 48);
+}
+
 /* Responsive Styles */
 
 @media screen and (max-width: 768px) {

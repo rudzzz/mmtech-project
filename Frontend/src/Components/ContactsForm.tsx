@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const ContactsForm = () => {
   const { id } = useParams();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
@@ -35,21 +38,41 @@ const ContactsForm = () => {
           `http://localhost:3000/api/contacts/${id}`,
           newContact
         );
+
         console.log("Updated contact: ", response.data);
+        setSuccessMessage("Contact updated successfully!");
       } else {
         const response = await axios.post(
           "http://localhost:3000/api/contacts",
           newContact
         );
+
         console.log("New contact: ", response.data);
+        setSuccessMessage("New contact created successfully!");
       }
+      setErrorMessage("");
+      setTimeout(() => {
+        setSuccessMessage("");
+        navigate("/");
+      }, 3000);
     } catch (error) {
       console.log("Error adding new contact: ", error);
+      setErrorMessage("Failed to update contact.");
     }
   };
 
   return (
     <div className="form-container">
+      {successMessage && (
+        <div className="message success-message">
+          <p>{successMessage}</p>
+        </div>
+      )}
+      {errorMessage && (
+        <div className="message error-message">
+          <p>{errorMessage}</p>
+        </div>
+      )}
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="contact-name">Name</label>
         <input
