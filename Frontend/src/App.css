@@ -162,6 +162,22 @@ ul {
   background-color: rgb(231, 48, 48);
 }
 
+/* Main Actions */
+
+.main-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-input {
+  padding: 20px;
+  border: 1px solid forestgreen;
+  border-radius: 15px;
+  font-size: 15px;
+  width: 70%;
+}
+
 /* Responsive Styles */
 
 @media screen and (max-width: 768px) {
@@ -229,6 +245,22 @@ ul {
     font-size: 14px;
     padding: 8px 16px;
   }
+
+  .main-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 92%;
+  }
+
+  .btn-add {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -258,5 +290,15 @@ ul {
   button {
     font-size: 12px;
     padding: 6px 12px;
+  }
+
+  .search-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .btn-add {
+    font-size: 12px;
+    padding: 8px 12px;
   }
 }

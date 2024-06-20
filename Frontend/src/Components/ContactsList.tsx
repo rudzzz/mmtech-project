@@ -9,6 +9,7 @@ const ContactsList = () => {
   const [contactsPerPage] = useState(5);
   const [totalContacts, setTotalContacts] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios
@@ -52,15 +53,33 @@ const ContactsList = () => {
     setCurrentPage(page);
   };
 
+  const handleSearch = (event) => {
+    setSearchTerm(event?.target.value);
+  };
+
+  const filteredContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="list-container">
       <h1>Contacts</h1>
-      <Link to={"/form/"}>
-        <button className="btn-add">New Contact</button>
-      </Link>
+      <div className="main-actions">
+        <input
+          type="text"
+          value={searchTerm}
+          maxLength={55}
+          onChange={handleSearch}
+          className="search-input"
+          placeholder="Search for a contact"
+        />
+        <Link to={"/form/"}>
+          <button className="btn-add">New Contact</button>
+        </Link>
+      </div>
       <ul>
         {contacts.length ? (
-          contacts.map((contact) => (
+          filteredContacts.map((contact) => (
             <li key={contact._id} className="contact-item">
               {contact.name}
               <div className="contact-actions">
