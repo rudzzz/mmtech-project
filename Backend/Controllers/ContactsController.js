@@ -1,14 +1,38 @@
 const database = require("../Models/ContactsModel");
 
 exports.getContacts = (request, response) => {
-  database.find({}, (error, contacts) => {
-    if (error) {
-      return response
-        .status(500)
-        .json({ message: `Failed to create contact, ${error.message}` });
-    }
-    response.status(200).json(contacts);
-  });
+  const { page = 1, pageSize = 10 } = request.query;
+  const limit = parseInt(pageSize);
+  const skip = (parseInt(page) - 1) * limit;
+
+  console.log(`Page: ${page}, Limit: ${limit}, Skip: ${skip}`);
+
+  database
+    .find({})
+    .skip(skip)
+    .limit(limit)
+    .exec((error, contacts) => {
+      if (error) {
+        return response
+          .status(500)
+          .json({ message: `Failed to fetch contacts, ${error.message}` });
+      }
+
+      database.count({}, (countError, totalCount) => {
+        if (countError) {
+          return response.status(500).json({
+            message: `Failed to count contacts, ${countError.message}`,
+          });
+        }
+
+        response.status(200).json({
+          contacts: contacts,
+          totalContacts: totalCount,
+          currentPage: parseInt(page),
+          totalPages: Math.ceil(totalCount / limit),
+        });
+      });
+    });
 };
 
 exports.getContactByid = (request, response) => {
